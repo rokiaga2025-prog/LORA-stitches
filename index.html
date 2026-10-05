@@ -1,0 +1,2198 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#8d63c7">
+<meta name="description" content="LORA stitches — حقائب كروشي عصرية مصنوعة بحب وتفاصيل تليق بذوقك.">
+<title>LORA stitches | حقائب كروشي عصرية</title>
+
+<style>
+:root{
+  --purple:#8b5fc4;
+  --purple-dark:#69409b;
+  --purple-deep:#4d2b73;
+  --lavender:#eee4fa;
+  --lavender-2:#f7f1fc;
+  --white:#ffffff;
+  --cream:#fcfaff;
+  --text:#29232f;
+  --muted:#766d7d;
+  --border:rgba(108,72,151,.13);
+  --shadow:0 18px 50px rgba(74,39,105,.10);
+  --shadow-soft:0 8px 25px rgba(74,39,105,.08);
+  --radius:26px;
+  --radius-sm:17px;
+  --transition:.3s ease;
+}
+
+html.dark{
+  --white:#17131d;
+  --cream:#1c1722;
+  --lavender:#261d31;
+  --lavender-2:#211a29;
+  --text:#f7f2fa;
+  --muted:#c0b5c7;
+  --border:rgba(220,197,239,.12);
+  --shadow:0 18px 50px rgba(0,0,0,.28);
+  --shadow-soft:0 8px 25px rgba(0,0,0,.22);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:"Segoe UI",Tahoma,Arial,sans-serif;
+  background:var(--cream);
+  color:var(--text);
+  line-height:1.7;
+  overflow-x:hidden;
+  transition:background .3s,color .3s;
+}
+
+body.no-scroll{
+  overflow:hidden;
+}
+
+button,
+a,
+input,
+textarea{
+  font:inherit;
+}
+
+button,
+a{
+  -webkit-tap-highlight-color:transparent;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button{
+  border:0;
+  cursor:pointer;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+.container{
+  width:min(1120px,92%);
+  margin:auto;
+}
+
+.section{
+  padding:78px 0;
+  position:relative;
+}
+
+.section-head{
+  max-width:680px;
+  margin:0 auto 42px;
+  text-align:center;
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:var(--purple);
+  font-size:.82rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.eyebrow::before,
+.eyebrow::after{
+  content:"";
+  width:22px;
+  height:1px;
+  background:var(--purple);
+  opacity:.45;
+}
+
+.section-title{
+  font-size:clamp(2rem,5vw,3rem);
+  line-height:1.2;
+  margin-bottom:13px;
+  letter-spacing:-.03em;
+}
+
+.section-desc{
+  color:var(--muted);
+  font-size:1rem;
+}
+
+/* SPLASH */
+#splash{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:linear-gradient(145deg,#fff 0%,#f4eafa 55%,#e6d4f7 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:opacity .65s,visibility .65s;
+}
+
+html.dark #splash{
+  background:linear-gradient(145deg,#17131d,#251b30);
+}
+
+#splash.hide{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+.splash-inner{
+  text-align:center;
+  animation:splashIn 1s ease;
+}
+
+.splash-mark{
+  width:76px;
+  height:76px;
+  border-radius:50%;
+  margin:0 auto 20px;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  background:linear-gradient(145deg,var(--purple),var(--purple-dark));
+  box-shadow:0 15px 45px rgba(139,95,196,.3);
+  font-size:2rem;
+}
+
+.splash-name{
+  font-size:2.25rem;
+  font-weight:800;
+  letter-spacing:.04em;
+  color:var(--purple-deep);
+}
+
+.splash-tag{
+  color:#8d7a9d;
+  margin-top:2px;
+  font-size:.82rem;
+  letter-spacing:.18em;
+}
+
+.splash-line{
+  width:45px;
+  height:3px;
+  border-radius:10px;
+  background:var(--purple);
+  margin:22px auto 0;
+  animation:loading 1.4s infinite ease-in-out;
+}
+
+@keyframes splashIn{
+  from{opacity:0;transform:translateY(18px) scale(.96)}
+  to{opacity:1;transform:none}
+}
+
+@keyframes loading{
+  0%,100%{transform:scaleX(.4);opacity:.4}
+  50%{transform:scaleX(1);opacity:1}
+}
+
+/* NAV */
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:1000;
+  padding:13px 0;
+  transition:var(--transition);
+}
+
+.navbar.scrolled{
+  background:rgba(255,255,255,.88);
+  backdrop-filter:blur(18px);
+  box-shadow:0 5px 25px rgba(50,30,70,.07);
+}
+
+html.dark .navbar.scrolled{
+  background:rgba(23,19,29,.88);
+}
+
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  font-weight:800;
+  font-size:1.05rem;
+  white-space:nowrap;
+}
+
+.logo-dot{
+  width:36px;
+  height:36px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  color:#fff;
+  background:linear-gradient(135deg,var(--purple),#b58bdd);
+  box-shadow:0 7px 18px rgba(139,95,196,.22);
+}
+
+.nav-actions{
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+
+.icon-btn{
+  width:40px;
+  height:40px;
+  border-radius:13px;
+  display:grid;
+  place-items:center;
+  background:var(--white);
+  color:var(--text);
+  border:1px solid var(--border);
+  box-shadow:var(--shadow-soft);
+  transition:var(--transition);
+}
+
+.icon-btn:hover{
+  color:var(--purple);
+  transform:translateY(-2px);
+}
+
+.menu-btn{
+  display:grid;
+}
+
+.nav-links{
+  position:absolute;
+  top:66px;
+  left:4%;
+  right:4%;
+  padding:13px;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(-8px);
+  transition:var(--transition);
+}
+
+.nav-links.open{
+  opacity:1;
+  visibility:visible;
+  transform:none;
+}
+
+.nav-links a{
+  display:block;
+  padding:11px 13px;
+  border-radius:13px;
+  font-size:.92rem;
+  font-weight:600;
+  color:var(--muted);
+  transition:var(--transition);
+}
+
+.nav-links a:hover{
+  color:var(--purple);
+  background:var(--lavender-2);
+}
+
+.lang-wrap{
+  position:relative;
+}
+
+.lang-menu{
+  position:absolute;
+  top:48px;
+  inset-inline-end:0;
+  min-width:145px;
+  padding:7px;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:17px;
+  box-shadow:var(--shadow);
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(-6px);
+  transition:var(--transition);
+}
+
+.lang-menu.show{
+  opacity:1;
+  visibility:visible;
+  transform:none;
+}
+
+.lang-menu button{
+  display:block;
+  width:100%;
+  text-align:start;
+  padding:9px 11px;
+  border-radius:11px;
+  background:transparent;
+  color:var(--text);
+}
+
+.lang-menu button:hover{
+  background:var(--lavender);
+  color:var(--purple);
+}
+
+/* HERO */
+.hero{
+  min-height:100svh;
+  padding:135px 0 75px;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 85% 20%,rgba(177,133,218,.24),transparent 32%),
+    radial-gradient(circle at 5% 80%,rgba(139,95,196,.11),transparent 30%),
+    var(--cream);
+}
+
+.hero-grid{
+  display:grid;
+  gap:40px;
+  align-items:center;
+}
+
+.hero-content{
+  text-align:center;
+}
+
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:7px 13px;
+  background:var(--lavender);
+  border:1px solid var(--border);
+  color:var(--purple-dark);
+  border-radius:50px;
+  font-size:.78rem;
+  font-weight:800;
+  margin-bottom:17px;
+}
+
+.hero h1{
+  font-size:clamp(2.7rem,11vw,5.7rem);
+  line-height:.98;
+  letter-spacing:-.055em;
+  margin-bottom:20px;
+}
+
+.hero h1 span{
+  color:var(--purple);
+  display:block;
+}
+
+.hero-text{
+  color:var(--muted);
+  max-width:620px;
+  margin:0 auto 27px;
+  font-size:1rem;
+}
+
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+}
+
+.btn{
+  min-height:48px;
+  padding:12px 20px;
+  border-radius:15px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  font-weight:800;
+  font-size:.9rem;
+  transition:var(--transition);
+}
+
+.btn-primary{
+  color:#fff;
+  background:linear-gradient(135deg,var(--purple),var(--purple-dark));
+  box-shadow:0 12px 28px rgba(139,95,196,.25);
+}
+
+.btn-primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 16px 34px rgba(139,95,196,.32);
+}
+
+.btn-secondary{
+  background:var(--white);
+  color:var(--purple-dark);
+  border:1px solid var(--border);
+  box-shadow:var(--shadow-soft);
+}
+
+.btn-secondary:hover{
+  transform:translateY(-3px);
+  border-color:rgba(139,95,196,.35);
+}
+
+.btn-whatsapp{
+  color:#fff;
+  background:#6d4ca1;
+}
+
+.hero-visual{
+  position:relative;
+  min-height:350px;
+  display:grid;
+  place-items:center;
+}
+
+.art-card{
+  width:min(340px,85vw);
+  aspect-ratio:4/5;
+  border-radius:45% 45% 27px 27px;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 35% 27%,rgba(255,255,255,.95),transparent 15%),
+    linear-gradient(145deg,#d9c2ee,#a47bcf 52%,#6d469b);
+  box-shadow:0 35px 65px rgba(78,45,110,.2);
+  transform:rotate(-3deg);
+}
+
+.art-card::before{
+  content:"";
+  position:absolute;
+  width:145px;
+  height:170px;
+  left:50%;
+  top:23%;
+  transform:translateX(-50%);
+  border:14px solid rgba(255,255,255,.73);
+  border-bottom:0;
+  border-radius:75px 75px 0 0;
+}
+
+.art-card::after{
+  content:"LORA";
+  position:absolute;
+  left:50%;
+  top:57%;
+  transform:translateX(-50%);
+  color:#fff;
+  font-size:1.45rem;
+  font-weight:900;
+  letter-spacing:.17em;
+}
+
+.thread{
+  position:absolute;
+  width:70px;
+  height:70px;
+  border:7px solid rgba(255,255,255,.5);
+  border-radius:50%;
+  bottom:13%;
+  left:14%;
+}
+
+.thread.two{
+  width:45px;
+  height:45px;
+  right:12%;
+  left:auto;
+  bottom:20%;
+}
+
+.floating-note{
+  position:absolute;
+  background:var(--white);
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  border-radius:18px;
+  padding:11px 14px;
+  font-size:.76rem;
+  font-weight:800;
+}
+
+.note-one{top:8%;right:0}
+.note-two{bottom:6%;left:0}
+
+.hero-scroll{
+  margin-top:42px;
+  color:var(--muted);
+  font-size:.76rem;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:7px;
+}
+
+/* GENERIC CARDS */
+.cards{
+  display:grid;
+  gap:16px;
+}
+
+.card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-soft);
+  padding:24px;
+  transition:var(--transition);
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:var(--shadow);
+}
+
+.icon-box{
+  width:49px;
+  height:49px;
+  display:grid;
+  place-items:center;
+  border-radius:16px;
+  background:var(--lavender);
+  color:var(--purple);
+  margin-bottom:17px;
+}
+
+.card h3{
+  font-size:1.1rem;
+  margin-bottom:7px;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+/* PROBLEM */
+.problem{
+  background:var(--lavender-2);
+}
+
+.problem-grid{
+  display:grid;
+  gap:17px;
+}
+
+.problem-card{
+  position:relative;
+}
+
+.problem-card.solution{
+  border-color:rgba(139,95,196,.24);
+}
+
+.problem-card.solution .icon-box{
+  background:var(--purple);
+  color:#fff;
+}
+
+/* ABOUT */
+.about-grid{
+  display:grid;
+  gap:28px;
+  align-items:center;
+}
+
+.about-visual{
+  min-height:320px;
+  background:linear-gradient(145deg,var(--lavender),var(--white));
+  border-radius:35px;
+  border:1px solid var(--border);
+  display:grid;
+  place-items:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.about-symbol{
+  width:190px;
+  height:190px;
+  border:2px solid rgba(139,95,196,.22);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  position:relative;
+}
+
+.about-symbol::before{
+  content:"";
+  width:125px;
+  height:125px;
+  border:2px dashed rgba(139,95,196,.32);
+  border-radius:50%;
+  position:absolute;
+}
+
+.about-symbol span{
+  color:var(--purple);
+  font-size:2.8rem;
+  font-weight:900;
+}
+
+.about-copy h2{
+  font-size:clamp(2rem,6vw,3.3rem);
+  line-height:1.12;
+  margin-bottom:16px;
+}
+
+.about-copy p{
+  color:var(--muted);
+  margin-bottom:13px;
+}
+
+.signature{
+  color:var(--purple);
+  font-weight:900;
+  margin-top:17px;
+  letter-spacing:.04em;
+}
+
+/* SERVICES */
+.service-card{
+  text-align:center;
+}
+
+.service-card .icon-box{
+  margin:0 auto 17px;
+}
+
+/* PRODUCTS */
+.products{
+  background:var(--lavender-2);
+}
+
+.products-grid{
+  display:grid;
+  gap:17px;
+}
+
+.product-card{
+  padding:0;
+  overflow:hidden;
+}
+
+.product-art{
+  height:230px;
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(145deg,#f2e6fa,#cbb0e5);
+}
+
+.product-art.dark-art{
+  background:linear-gradient(145deg,#33253f,#8760a9);
+}
+
+.product-art.cream-art{
+  background:linear-gradient(145deg,#f7f1e8,#d7c2a8);
+}
+
+.product-bag{
+  position:absolute;
+  width:125px;
+  height:125px;
+  left:50%;
+  top:55%;
+  transform:translate(-50%,-50%);
+  border-radius:28px;
+  background:#9b6bc7;
+  box-shadow:0 18px 30px rgba(67,39,89,.17);
+}
+
+.product-bag::before{
+  content:"";
+  position:absolute;
+  width:66px;
+  height:65px;
+  border:10px solid currentColor;
+  border-bottom:0;
+  border-radius:50px 50px 0 0;
+  left:50%;
+  top:-48px;
+  transform:translateX(-50%);
+  color:#9b6bc7;
+}
+
+.product-bag::after{
+  content:"L";
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  color:rgba(255,255,255,.8);
+  font-size:2rem;
+  font-weight:900;
+}
+
+.product-bag.black{
+  background:#24202a;
+}
+.product-bag.black::before{color:#24202a}
+.product-bag.cream{background:#c8ad89}
+.product-bag.cream::before{color:#c8ad89}
+
+.product-info{
+  padding:21px;
+}
+
+.product-info h3{
+  margin-bottom:5px;
+}
+
+.product-info p{
+  color:var(--muted);
+  font-size:.85rem;
+  margin-bottom:15px;
+}
+
+.product-link{
+  color:var(--purple);
+  font-weight:800;
+  font-size:.83rem;
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+}
+
+/* FEATURES */
+.feature-grid{
+  display:grid;
+  gap:16px;
+}
+
+.feature{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  padding:20px;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:21px;
+}
+
+.feature .icon-box{
+  flex:0 0 46px;
+  width:46px;
+  height:46px;
+  margin:0;
+}
+
+.feature h3{
+  font-size:1rem;
+  margin-bottom:3px;
+}
+
+.feature p{
+  color:var(--muted);
+  font-size:.84rem;
+}
+
+/* PROCESS */
+.process{
+  background:var(--lavender-2);
+}
+
+.process-grid{
+  display:grid;
+  gap:16px;
+  counter-reset:step;
+}
+
+.step{
+  position:relative;
+}
+
+.step-number{
+  width:40px;
+  height:40px;
+  border-radius:13px;
+  background:var(--purple);
+  color:#fff;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  margin-bottom:15px;
+}
+
+.step h3{
+  margin-bottom:5px;
+}
+
+/* GALLERY */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+.gallery-item{
+  min-height:170px;
+  border-radius:23px;
+  overflow:hidden;
+  position:relative;
+  background:var(--lavender);
+  border:1px solid var(--border);
+}
+
+.gallery-item.large{
+  grid-row:span 2;
+  min-height:350px;
+}
+
+.gallery-art{
+  width:100%;
+  height:100%;
+  min-height:inherit;
+  position:relative;
+  display:grid;
+  place-items:center;
+}
+
+.gallery-art.one{
+  background:linear-gradient(145deg,#eadbf5,#a67bcf);
+}
+.gallery-art.two{
+  background:linear-gradient(145deg,#e9e4ed,#6d596f);
+}
+.gallery-art.three{
+  background:linear-gradient(145deg,#fbf7ef,#d4bfa4);
+}
+.gallery-art.four{
+  background:linear-gradient(145deg,#f0e2f5,#c5a0df);
+}
+
+.gallery-bag{
+  width:90px;
+  height:95px;
+  background:#9565c0;
+  border-radius:22px;
+  position:relative;
+  box-shadow:0 15px 24px rgba(50,30,70,.18);
+}
+
+.gallery-bag::before{
+  content:"";
+  position:absolute;
+  width:55px;
+  height:45px;
+  border:8px solid #9565c0;
+  border-bottom:0;
+  border-radius:45px 45px 0 0;
+  left:50%;
+  top:-35px;
+  transform:translateX(-50%);
+}
+
+.gallery-bag.b2{background:#29232d}
+.gallery-bag.b2::before{border-color:#29232d}
+.gallery-bag.b3{background:#c4a782}
+.gallery-bag.b3::before{border-color:#c4a782}
+
+/* PRICING */
+.pricing{
+  background:var(--lavender-2);
+}
+
+.price-note{
+  max-width:750px;
+  margin:0 auto;
+  text-align:center;
+  padding:22px;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:23px;
+  box-shadow:var(--shadow-soft);
+}
+
+.price-note strong{
+  color:var(--purple);
+  display:block;
+  margin-bottom:5px;
+}
+
+.price-note p{
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+/* TESTIMONIALS */
+.testimonials{
+  display:grid;
+  gap:16px;
+}
+
+.quote{
+  position:relative;
+}
+
+.quote-mark{
+  font-size:3rem;
+  line-height:.8;
+  color:var(--purple);
+  opacity:.35;
+}
+
+.stars{
+  color:#9a70c7;
+  letter-spacing:2px;
+  margin:10px 0;
+}
+
+.quote p{
+  color:var(--text);
+  font-size:.94rem;
+}
+
+.customer{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  margin-top:18px;
+}
+
+.avatar{
+  width:39px;
+  height:39px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  color:#fff;
+  background:linear-gradient(135deg,var(--purple),#bd9ade);
+  font-weight:900;
+}
+
+.customer small{
+  display:block;
+  color:var(--muted);
+}
+
+/* FAQ */
+.faq-list{
+  max-width:850px;
+  margin:auto;
+}
+
+.faq-item{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:18px;
+  margin-bottom:10px;
+  overflow:hidden;
+}
+
+.faq-question{
+  width:100%;
+  padding:17px 19px;
+  background:transparent;
+  color:var(--text);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  text-align:start;
+  gap:15px;
+  font-weight:800;
+}
+
+.faq-icon{
+  color:var(--purple);
+  font-size:1.25rem;
+  transition:var(--transition);
+}
+
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .35s ease;
+}
+
+.faq-answer p{
+  padding:0 19px 18px;
+  color:var(--muted);
+  font-size:.88rem;
+}
+
+.faq-item.active .faq-icon{
+  transform:rotate(45deg);
+}
+
+/* INFO */
+.info-grid{
+  display:grid;
+  gap:16px;
+}
+
+.info-card{
+  display:flex;
+  gap:15px;
+  align-items:flex-start;
+}
+
+.info-card .icon-box{
+  flex:0 0 47px;
+  width:47px;
+  height:47px;
+  margin:0;
+}
+
+.info-card h3{
+  margin-bottom:4px;
+}
+
+.info-card p{
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+/* CONTACT */
+.contact{
+  background:linear-gradient(145deg,var(--purple-deep),var(--purple));
+  color:#fff;
+}
+
+.contact .eyebrow{
+  color:#eadcf7;
+}
+
+.contact .eyebrow::before,
+.contact .eyebrow::after{
+  background:#eadcf7;
+}
+
+.contact .section-desc{
+  color:rgba(255,255,255,.76);
+}
+
+.contact-card{
+  max-width:850px;
+  margin:auto;
+  text-align:center;
+}
+
+.contact .btn-secondary{
+  background:#fff;
+  color:var(--purple-deep);
+}
+
+.contact .btn-primary{
+  background:#fff;
+  color:var(--purple-deep);
+  box-shadow:none;
+}
+
+/* FOOTER */
+footer{
+  background:#21152d;
+  color:#fff;
+  padding:43px 0 25px;
+}
+
+.footer-grid{
+  display:grid;
+  gap:28px;
+}
+
+.footer-logo{
+  color:#fff;
+  margin-bottom:10px;
+}
+
+.footer-about{
+  color:rgba(255,255,255,.62);
+  font-size:.86rem;
+  max-width:390px;
+}
+
+.footer-title{
+  font-size:.95rem;
+  margin-bottom:10px;
+}
+
+.footer-links{
+  display:grid;
+  gap:7px;
+}
+
+.footer-links a{
+  color:rgba(255,255,255,.62);
+  font-size:.83rem;
+  transition:var(--transition);
+}
+
+.footer-links a:hover{
+  color:#fff;
+}
+
+.socials{
+  display:flex;
+  gap:8px;
+  margin-top:14px;
+}
+
+.social{
+  width:39px;
+  height:39px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  background:rgba(255,255,255,.09);
+  color:#fff;
+  transition:var(--transition);
+}
+
+.social:hover{
+  background:var(--purple);
+  transform:translateY(-2px);
+}
+
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);
+  margin-top:30px;
+  padding-top:18px;
+  text-align:center;
+  color:rgba(255,255,255,.48);
+  font-size:.75rem;
+}
+
+.footer-bottom span{
+  color:#cbaee7;
+}
+
+/* FLOATING WHATSAPP */
+.float-whatsapp{
+  position:fixed;
+  bottom:18px;
+  inset-inline-end:17px;
+  width:54px;
+  height:54px;
+  border-radius:18px;
+  z-index:900;
+  display:grid;
+  place-items:center;
+  background:#6e4ca0;
+  color:#fff;
+  box-shadow:0 13px 30px rgba(75,44,110,.28);
+  transition:var(--transition);
+}
+
+.float-whatsapp:hover{
+  transform:translateY(-4px) scale(1.03);
+}
+
+/* TOAST */
+.toast{
+  position:fixed;
+  bottom:86px;
+  left:50%;
+  transform:translate(-50%,20px);
+  background:var(--text);
+  color:var(--white);
+  padding:11px 17px;
+  border-radius:13px;
+  font-size:.8rem;
+  opacity:0;
+  visibility:hidden;
+  z-index:3000;
+  transition:var(--transition);
+  white-space:nowrap;
+}
+
+.toast.show{
+  opacity:1;
+  visibility:visible;
+  transform:translate(-50%,0);
+}
+
+/* REVEAL */
+.reveal{
+  opacity:0;
+  transform:translateY(25px);
+  transition:opacity .65s ease,transform .65s ease;
+}
+
+.reveal.visible{
+  opacity:1;
+  transform:none;
+}
+
+/* DESKTOP */
+@media(min-width:700px){
+  .section{
+    padding:100px 0;
+  }
+
+  .menu-btn{
+    display:none;
+  }
+
+  .nav-links{
+    position:static;
+    padding:0;
+    background:transparent;
+    border:0;
+    box-shadow:none;
+    opacity:1;
+    visibility:visible;
+    transform:none;
+    display:flex;
+    align-items:center;
+    gap:2px;
+  }
+
+  .nav-links a{
+    padding:8px 10px;
+    font-size:.78rem;
+  }
+
+  .hero-grid{
+    grid-template-columns:1.05fr .95fr;
+  }
+
+  .hero-content{
+    text-align:start;
+  }
+
+  .hero-text{
+    margin-left:0;
+    margin-right:0;
+  }
+
+  .hero-buttons{
+    justify-content:flex-start;
+  }
+
+  .hero-scroll{
+    justify-content:flex-start;
+  }
+
+  .hero-visual{
+    min-height:500px;
+  }
+
+  .art-card{
+    width:370px;
+  }
+
+  .problem-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .cards.three{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .about-grid{
+    grid-template-columns:.9fr 1.1fr;
+    gap:70px;
+  }
+
+  .products-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .feature-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .process-grid{
+    grid-template-columns:repeat(4,1fr);
+  }
+
+  .testimonials{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .info-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .footer-grid{
+    grid-template-columns:1.5fr 1fr 1fr;
+  }
+}
+
+@media(min-width:1000px){
+  .nav-actions{
+    gap:9px;
+  }
+
+  .logo{
+    font-size:1.1rem;
+  }
+
+  .nav-links a{
+    padding:9px 11px;
+    font-size:.82rem;
+  }
+
+  .gallery-grid{
+    grid-template-columns:1.3fr 1fr 1fr;
+  }
+}
+
+/* REDUCED MOTION */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- SPLASH SCREEN -->
+<div id="splash">
+  <div class="splash-inner">
+    <div class="splash-mark">✦</div>
+    <div class="splash-name">LORA stitches</div>
+    <div class="splash-tag" data-i18n="splashTag">HANDMADE • CROCHET • LUXURY</div>
+    <div class="splash-line"></div>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+
+    <a href="#home" class="logo" aria-label="LORA stitches">
+      <span class="logo-dot">L</span>
+      <span>LORA stitches</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" data-i18n="navHome">الرئيسية</a>
+      <a href="#about" data-i18n="navAbout">من نحن</a>
+      <a href="#products" data-i18n="navProducts">المنتجات</a>
+      <a href="#gallery" data-i18n="navGallery">المعرض</a>
+      <a href="#faq" data-i18n="navFaq">الأسئلة</a>
+      <a href="#contact" data-i18n="navContact">تواصلي معنا</a>
+    </nav>
+
+    <div class="nav-actions">
+
+      <div class="lang-wrap">
+        <button class="icon-btn" id="langBtn" aria-label="Language">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M3 12h18M12 3c2.4 2.5 3.6 5.5 3.6 9s-1.2 6.5-3.6 9c-2.4-2.5-3.6-5.5-3.6-9S9.6 5.5 12 3Z"></path>
+          </svg>
+        </button>
+
+        <div class="lang-menu" id="langMenu">
+          <button data-lang="ar">العربية</button>
+          <button data-lang="fr">Français</button>
+          <button data-lang="en">English</button>
+        </div>
+      </div>
+
+      <button class="icon-btn" id="themeBtn" aria-label="Dark mode">
+        <svg id="themeIcon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.7 6.7 0 0 0 21 12.8Z"></path>
+        </svg>
+      </button>
+
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+      </button>
+
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+
+    <div class="hero-content reveal">
+
+      <div class="hero-badge">
+        <span>✦</span>
+        <span data-i18n="heroBadge">مصنوعة بحب • مصممة لتختلفي</span>
+      </div>
+
+      <h1>
+        <span>LORA</span>
+        <span data-i18n="heroTitle">حقيبتكِ... لمسة تشبهكِ</span>
+      </h1>
+
+      <p class="hero-text" data-i18n="heroText">
+        حقائب كروشي عصرية مصنوعة يدوياً بعناية، تجمع بين الأناقة والتميّز والتفاصيل التي تجعل كل قطعة مختلفة عن غيرها.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#products" class="btn btn-primary">
+          <span data-i18n="heroCTA">اكتشفي المجموعة</span>
+          <span>←</span>
+        </a>
+
+        <a href="https://wa.me/?text=مرحباً%20LORA%20stitches%20،%20أرغب%20في%20الاستفسار%20عن%20الحقائب%20المتوفرة." target="_blank" rel="noopener" class="btn btn-whatsapp">
+          <span>◉</span>
+          <span data-i18n="whatsapp">تواصلي عبر واتساب</span>
+        </a>
+      </div>
+
+      <div class="hero-scroll">
+        <span>↓</span>
+        <span data-i18n="scroll">اكتشفي التفاصيل</span>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="art-card">
+        <div class="thread"></div>
+        <div class="thread two"></div>
+      </div>
+
+      <div class="floating-note note-one">
+        ✦ <span data-i18n="noteOne">صناعة يدوية</span>
+      </div>
+
+      <div class="floating-note note-two">
+        ♡ <span data-i18n="noteTwo">تفاصيل بحب</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROBLEM / SOLUTION -->
+<section class="section problem" id="solution">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="eyebrow" data-i18n="eyebrowStory">لماذا LORA؟</div>
+      <h2 class="section-title" data-i18n="problemTitle">لأنكِ لا تبحثين عن حقيبة عادية</h2>
+      <p class="section-desc" data-i18n="problemDesc">
+        نعرف أن القطعة التي تحملينها جزء من أسلوبك، لذلك نصنعها لتكون أكثر من مجرد حقيبة.
+      </p>
+    </div>
+
+    <div class="problem-grid">
+
+      <div class="card problem-card reveal">
+        <div class="icon-box">✕</div>
+        <h3 data-i18n="problemOneTitle">تشابه القطع</h3>
+        <p data-i18n="problemOneText">
+          عندما تبدو كل الحقائب متشابهة، يصبح العثور على قطعة تعبّر عن ذوقك أمراً صعباً.
+        </p>
+      </div>
+
+      <div class="card problem-card solution reveal">
+        <div class="icon-box">✓</div>
+        <h3 data-i18n="solutionOneTitle">قطعة لها شخصيتها</h3>
+        <p data-i18n="solutionOneText">
+          في LORA stitches نركز على التصميم واللون والتفاصيل اليدوية حتى تحصلي على حقيبة لها حضورها الخاص.
+        </p>
+      </div>
+
+      <div class="card problem-card reveal">
+        <div class="icon-box">✕</div>
+        <h3 data-i18n="problemTwoTitle">اختيارات بلا روح</h3>
+        <p data-i18n="problemTwoText">
+          أحياناً تكون الحقيبة جميلة، لكنها لا تشبه أسلوبك ولا تضيف شيئاً لإطلالتك.
+        </p>
+      </div>
+
+      <div class="card problem-card solution reveal">
+        <div class="icon-box">✓</div>
+        <h3 data-i18n="solutionTwoTitle">تفاصيل تصنع الفرق</h3>
+        <p data-i18n="solutionTwoText">
+          نختار الخامة والتدرجات والتشطيبات بعناية لنمنحك قطعة بسيطة، أنيقة، ومليئة بالشخصية.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container about-grid">
+
+    <div class="about-visual reveal">
+      <div class="about-symbol">
+        <span>L</span>
+      </div>
+    </div>
+
+    <div class="about-copy reveal">
+      <div class="eyebrow" data-i18n="aboutEyebrow">قصتنا</div>
+      <h2 data-i18n="aboutTitle">من خيط بسيط... إلى قطعة تلفت الانتباه.</h2>
+
+      <p data-i18n="aboutText1">
+        LORA stitches هي علامة تهتم بصناعة حقائب الكروشي العصرية يدوياً، حيث نؤمن أن الجمال الحقيقي يوجد في التفاصيل الصغيرة.
+      </p>
+
+      <p data-i18n="aboutText2">
+        كل حقيبة تُصنع بعناية وهدوء، من اختيار الخامة إلى آخر غرزة، لتجمع بين الطابع اليدوي الدافئ والمظهر العصري الأنيق.
+      </p>
+
+      <p data-i18n="aboutText3">
+        هدفنا بسيط: أن تجدي قطعة مختلفة، أنثوية، وعملية في الوقت نفسه، تشعرين أنها صُممت لكِ.
+      </p>
+
+      <div class="signature">LORA stitches ♡</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="eyebrow" data-i18n="servicesEyebrow">ماذا نقدم؟</div>
+      <h2 class="section-title" data-i18n="servicesTitle">خدمة تبدأ من الفكرة وتنتهي بقطعة تحبينها</h2>
+      <p class="section-desc" data-i18n="servicesDesc">
+        نهتم بالتفاصيل التي تجعل تجربة طلب الحقيبة بسيطة ومريحة.
+      </p>
+    </div>
+
+    <div class="cards three">
+
+      <div class="card service-card reveal">
+        <div class="icon-box">✦</div>
+        <h3 data-i18n="service1Title">حقائب مصنوعة يدوياً</h3>
+        <p data-i18n="service1Text">تصاميم كروشي عصرية تُنفذ بعناية واهتمام بالتشطيب.</p>
+      </div>
+
+      <div class="card service-card reveal">
+        <div class="icon-box">♡</div>
+        <h3 data-i18n="service2Title">اختيارات تناسب ذوقك</h3>
+        <p data-i18n="service2Text">ألوان وتصاميم مختلفة لتختاري القطعة الأقرب لشخصيتك.</p>
+      </div>
+
+      <div class="card service-card reveal">
+        <div class="icon-box">⌁</div>
+        <h3 data-i18n="service3Title">تغليف أنيق</h3>
+        <p data-i18n="service3Text">نحرص أن تصل طلبيتك بشكل مرتب يليق بقطعة صنعت خصيصاً لك.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section products" id="products">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="eyebrow" data-i18n="productsEyebrow">المجموعة</div>
+      <h2 class="section-title" data-i18n="productsTitle">اختاري القطعة التي تشبهكِ</h2>
+      <p class="section-desc" data-i18n="productsDesc">
+        مجموعة مختارة من أفكار حقائب LORA stitches، مع إمكانية الاستفسار عن المتوفر حالياً.
+      </p>
+    </div>
+
+    <div class="products-grid">
+
+      <article class="card product-card reveal">
+        <div class="product-art">
+          <div class="product-bag"></div>
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="product1Title">حقيبة LORA Signature</h3>
+          <p data-i18n="product1Text">تصميم أنثوي ناعم يناسب الإطلالات اليومية والمناسبات الخفيفة.</p>
+          <a href="https://wa.me/?text=مرحباً%20LORA%20stitches%20،%20أرغب%20في%20الاستفسار%20عن%20حقيبة%20LORA%20Signature." target="_blank" rel="noopener" class="product-link">
+            <span data-i18n="askAvailability">اسألي عن التوفر</span> →
+          </a>
+        </div>
+      </article>
+
+      <article class="card product-card reveal">
+        <div class="product-art dark-art">
+          <div class="product-bag black"></div>
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="product2Title">حقيبة Bow</h3>
+          <p data-i18n="product2Text">لمسة مرحة ومميزة، مناسبة لمن تحب القطع الملفتة دون مبالغة.</p>
+          <a href="https://wa.me/?text=مرحباً%20LORA%20stitches%20،%20أرغب%20في%20الاستفسار%20عن%20حقيبة%20Bow." target="_blank" rel="noopener" class="product-link">
+            <span data-i18n="askAvailability">اسألي عن التوفر</span> →
+          </a>
+        </div>
+      </article>
+
+      <article class="card product-card reveal">
+        <div class="product-art cream-art">
+          <div class="product-bag cream"></div>
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="product3Title">حقيبة Summer</h3>
+          <p data-i18n="product3Text">خفيفة وعملية بطابع صيفي، مثالية للخروجات والسفر والعطلات.</p>
+          <a href="https://wa.me/?text=مرحباً%20LORA%20stitches%20،%20أرغب%20في%20الاستفسار%20عن%20حقيبة%20Summer." target="_blank" rel="noopener" class="product-link">
+            <span data-i18n="askAvailability">اسألي عن التوفر</span> →
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <div style="text-align:center;margin-top:28px" class="reveal">
+      <a href="https://www.facebook.com/share/1FeeUiRLzG/" target="_blank" rel="noopener" class="btn btn-primary">
+        <span data-i18n="seeFacebook">شاهدي الصفحة كاملة</span>
+        <span>↗</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="eyebrow" data-i18n="featuresEyebrow">لماذا نحن؟</div>
+      <h2 class="section-title" data-i18n="featuresTitle">تفاصيل صغيرة، فرق كبير</h2>
+      <p class="section-desc" data-i18n="featuresDesc">
+        لأن الحقيبة المصنوعة يدوياً تستحق اهتماماً يليق بها.
+      </p>
+    </div>
+
+    <div class="feature-grid">
+
+      <div class="feature reveal">
+        <div class="icon-box">♡</div>
+        <div>
+          <h3 data-i18n="feature1Title">صناعة يدوية</h3>
+          <p data-i18n="feature1Text">كل قطعة تمر عبر خطوات يدوية دقيقة، وليست منتجاً صناعياً مكرراً.</p>
+        </div>
+      </div>
+
+      <div class="feature reveal">
+        <div class="icon-box">✦</div>
+        <div>
+          <h3 data-i18n="feature2Title">تصاميم مميزة</h3>
+          <p data-i18n="feature2Text">نركز على اللمسات التي تمنح كل تصميم شخصية خاصة.</p>
+        </div>
+      </div>
+
+      <div class="feature reveal">
+        <div class="icon-box">✓</div>
+        <div>
+          <h3 data-i18n="feature3Title">اهتمام بالتشطيب</h3>
+          <p data-i18n="feature3Text">نهتم بنظافة الغرز وترتيب التفاصيل النهائية قبل التسليم.</p>
+        </div>
+      </div>
+
+      <div class="feature reveal">
+        <div class="icon-box">⌁</div>
+        <div>
+          <h3 data-i18n="feature4Title">تغليف مرتب</h3>
+          <p data-i18n="feature4Text">نضيف لمسات بسيطة تجعل تجربة استلام طلبك أجمل.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section process" id="process">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="eyebrow" data-i18n="processEyebrow">بكل بساطة</div>
+      <h2 class="section-title" data-i18n="processTitle">كيف نعمل؟</h2>
+      <p class="section-desc" data-i18n="processDesc">أربع خطوات بسيطة من اختيارك إلى استلام قطعتك.</p>
+    </div>
+
+    <div class="process-grid">
+
+      <div class="card step reveal">
+        <div class="step-number">01</div>
+        <h3 data-i18n="step1Title">اختاري</h3>
+        <p data-i18n="step1Text">شاهدي التصاميم واختاري الحقيبة الأقرب لذوقك.</p>
+      </div>
+
+      <div class="card step reveal">
+        <div class="step-number">02</div>
+        <h3 data-i18n="step2Title">تواصلي</h3>
+        <p data-i18n="step2Text">أرسلي لنا رسالة لمعرفة التوفر والتفاصيل.</p>
+      </div>
+
+      <div class="card step reveal">
+        <div class="step-number">03</div>
+        <h3 data-i18n="step3Title">نحضّر</h3>
+        <p data-i18n="step3Text">نجهز طلبك بعناية ونراجع التفاصيل قبل الإرسال.</p>
+      </div>
+
+      <div class="card step reveal">
+        <div class="step-number">04</div>
+        <h3 data-i18n="step4Title">تستلمين</h3>
+        <p data-i18n="step4Text">تصل إليك حقيبتك مغلفة ومرتبة وجاهزة لترافقك.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section" id="gallery">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="eyebrow" data-i18n="galleryEyebrow">لمحات من أعمالنا</div>
+      <h2 class="section-title" data-i18n="galleryTitle">صُنعت لتُرى وتُحب</h2>
+      <p class="section-desc" data-i18n="galleryDesc">
+        بعض الأجواء البصرية المستوحاة من عالم LORA stitches والحقائب اليدوية.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item large reveal">
+        <div class="gallery-art one">
+          <div class="gallery-bag"></div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal">
+        <div class="gallery-art two">
+          <div class="gallery-bag b2"></div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal">
+        <div class="gallery-art three">
+          <div class="gallery-bag b3"></div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal">
+        <div class="gallery-art four">
+          <div class="gallery-bag"></div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal">
+        <div class="gallery-art one">
+          <div class="gallery-bag b2"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:28px" class="reveal">
+      <a href="https://www.facebook.com/share/1FeeUiRLzG/" target="_blank" rel="noopener" class="btn btn-secondary">
+        <span data-i18n="galleryCTA">شاهدي المزيد من الأعمال</span>
+        <span>↗</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section pricing" id="pricing">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="eyebrow" data-i18n="pricingEyebrow">الأسعار</div>
+      <h2 class="section-title" data-i18n="pricingTitle">كل تصميم له تفاصيله الخاصة</h2>
+    </div>
+
+    <div class="price-note reveal">
+      <strong data-i18n="priceStrong">الأسعار حسب التصميم</strong>
+      <p data-i18n="priceText">
+        لأن المقاسات والخامات والتفاصيل تختلف من حقيبة لأخرى، نفضّل أن نخبرك بالسعر الحالي مباشرة عند الاستفسار عن التصميم الذي أعجبك.
+      </p>
+
+      <div style="margin-top:18px">
+        <a href="https://wa.me/?text=مرحباً%20LORA%20stitches%20،%20أرغب%20في%20معرفة%20سعر%20الحقيبة." target="_blank" rel="noopener" class="btn btn-primary">
+          <span data-i18n="priceCTA">اطلبي السعر</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="reviews">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="eyebrow" data-i18n="reviewsEyebrow">كلمات من زبائننا</div>
+      <h2 class="section-title" data-i18n="reviewsTitle">أجمل شيء؟ رضاكِ عن القطعة</h2>
+      <p class="section-desc" data-i18n="reviewsDesc">الثقة تُبنى بتجارب حقيقية وتفاصيل صادقة.</p>
+    </div>
+
+    <div class="testimonials">
+
+      <article class="card quote reveal">
+        <div class="quote-mark">“</div>
+        <div class="stars">★★★★★</div>
+        <p data-i18n="review1">
+          روعة، تسلم الأيادي! الحقيبة أحسن من الصور ومتقونة بزاف.
+        </p>
+        <div class="customer">
+          <div class="avatar">♡</div>
+          <div>
+            <strong data-i18n="customer1">زبونة LORA</strong>
+            <small data-i18n="customerLabel">طلبية حقيقية</small>
+          </div>
+        </div>
+      </article>
+
+      <article class="card quote reveal">
+        <div class="quote-mark">“</div>
+        <div class="stars">★★★★★</div>
+        <p data-i18n="review2">
+          التفاصيل جميلة والتغليف مرتب، والقطعة في الواقع أجمل مما توقعت.
+        </p>
+        <div class="customer">
+          <div class="avatar">L</div>
+          <div>
+            <strong data-i18n="customer2">زبونة LORA</strong>
+            <small data-i18n="customerLabel">طلبية حقيقية</small>
+          </div>
+        </div>
+      </article>
+
+      <article class="card quote reveal">
+        <div class="quote-mark">“</div>
+        <div class="stars">★★★★★</div>
+        <p data-i18n="review3">
+          أكثر شيء عجبني هو أنها قطعة مختلفة وتحسّي بلي راهي مصنوعة بحب.
+        </p>
+        <div class="customer">
+          <div class="avatar">✦</div>
+          <div>
+            <strong data-i18n="customer3">زبونة LORA</strong>
+            <small data-i18n="customerLabel">طلبية حقيقية</small>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="eyebrow" data-i18n="faqEyebrow">أسئلة شائعة</div>
+      <h2 class="section-title" data-i18n="faqTitle">كل ما تريدين معرفته قبل الطلب</h2>
+    </div>
+
+    <div class="faq-list">
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span data-i18n="faq1Q">هل الحقائب مصنوعة يدوياً؟</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq1A">نعم، حقائب LORA stitches تُصنع يدوياً بعناية، مع الاهتمام بالتفاصيل والتشطيب النهائي.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span data-i18n="faq2Q">كيف أعرف التصاميم المتوفرة؟</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq2A">يمكنك التواصل معنا مباشرة لمعرفة التصاميم والألوان المتوفرة حالياً.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span data-i18n="faq3Q">هل يمكن طلب لون أو تصميم معين؟</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq3A">حسب نوع التصميم والخامة وتوفر المواد، يمكنك إرسال فكرتك وسنخبرك بما يمكن تنفيذه.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span data-i18n="faq4Q">كيف أتواصل للطلب؟</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq4A">يمكنك الضغط على أي زر تواصل في الموقع أو زيارة صفحة LORA stitches على فيسبوك.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span data-i18n="faq5Q">هل توجد خدمة توصيل؟</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq5A">التوصيل يعتمد على الولاية والاتفاق عند الطلب. تواصلي معنا لمعرفة خيارات التوصيل المتاحة لعنوانك.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WORKING HOURS / ADDRESS -->
+<section class="section" id="info">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="eyebrow" data-i18n="infoEyebrow">معلومات مهمة</div>
+      <h2 class="section-title" data-i18n="infoTitle">نحن هنا عندما تحتاجيننا</h2>
+    </div>
+
+    <div class="info-grid">
+
+      <div class="card info-card reveal">
+        <div class="icon-box">◷</div>
+        <div>
+          <h3 data-i18n="hoursTitle">مواعيد التواصل</h3>
+          <p data-i18n="hoursText">السبت — الخميس<br>10:00 صباحاً — 20:00 مساءً</p>
+        </div>
+      </div>
+
+      <div class="card info-card reveal">
+        <div class="icon-box">⌖</div>
+        <div>
+          <h3 data-i18n="addressTitle">الموقع</h3>
+          <p data-i18n="addressText">الجزائر — يتم تأكيد تفاصيل التوصيل والعنوان عند الطلب.</p>
+        </div>
+      </div>
+
+      <div class="card info-card reveal">
+        <div class="icon-box">♡</div>
+        <div>
+          <h3 data-i18n="responseTitle">الرد على الرسائل</h3>
+          <p data-i18n="responseText">نحرص على الرد على استفساراتك في أقرب وقت ممكن خلال ساعات التواصل.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="container">
+
+    <div class="contact-card reveal">
+      <div class="eyebrow" data-i18n="contactEyebrow">لنبدأ</div>
+
+      <h2 class="section-title" data-i18n="contactTitle">
+        حقيبتك القادمة قد تكون هنا ♡
+      </h2>
+
+      <p class="section-desc" data-i18n="contactText">
+        أعجبك تصميم؟ عندك فكرة؟ أرسلي لنا رسالة وسنساعدك في معرفة التفاصيل والتوفر.
+      </p>
+
+      <div class="hero-buttons" style="margin-top:25px">
+
+        <a href="https://wa.me/?text=مرحباً%20LORA%20stitches%20،%20أرغب%20في%20الاستفسار%20عن%20الحقائب." target="_blank" rel="noopener" class="btn btn-primary">
+          <span>◉</span>
+          <span data-i18n="contactWhatsapp">تواصلي عبر واتساب</span>
+        </a>
+
+        <a href="https://www.facebook.com/share/1FeeUiRLzG/" target="_blank" rel="noopener" class="btn btn-secondary">
+          <span>f</span>
+          <span data-i18n="contactFacebook">صفحتنا على فيسبوك</span>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+        <div class="logo footer-logo">
+          <span class="logo-dot">L</span>
+          <span>LORA stitches</span>
+        </div>
+
+        <p class="footer-about" data-i18n="footerAbout">
+          حقائب كروشي عصرية مصنوعة يدوياً، لمن تحب أن تحمل قطعة مختلفة تشبه ذوقها.
+        </p>
+
+        <div class="socials">
+          <a href="https://www.facebook.com/share/1FeeUiRLzG/" target="_blank" rel="noopener" class="social" aria-label="Facebook">f</a>
+          <a href="https://wa.me/?text=مرحباً%20LORA%20stitches" target="_blank" rel="noopener" class="social" aria-label="WhatsApp">◉</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer-title" data-i18n="footerExplore">استكشفي</h3>
+        <div class="footer-links">
+          <a href="#about" data-i18n="navAbout">من نحن</a>
+          <a href="#products" data-i18n="navProducts">المنتجات</a>
+          <a href="#gallery" data-i18n="navGallery">المعرض</a>
+          <a href="#reviews" data-i18n="footerReviews">آراء العملاء</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer-title" data-i18n="footerContact">تواصلي</h3>
+        <div class="footer-links">
+          <a href="#contact" data-i18n="navContact">تواصلي معنا</a>
+          <a href="https://www.facebook.com/share/1FeeUiRLzG/" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://wa.me/?text=مرحباً%20LORA%20stitches" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © <span id="year"></span> LORA stitches — <span data-i18n="rights">جميع الحقوق محفوظة</span>
+    </div>
+
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/?text=مرحباً%20LORA%20stitches%20،%20أرغب%20في%20الاستفسار%20عن%20الحقائب." target="_blank" rel="noopener" class="float-whatsapp" aria-label="WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+    <path d="M20.5 11.5a8.5 8.5 0 0 1-12.7 7.4L3.5 20l1.1-4A8.5 8.5 0 1 1 20.5 11.5Z"></path>
+    <path d="M8.4 8.2c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4 0 .6l-.5.6c-.1.2-.1.3 0 .5.4.7 1 1.3 1.7 1.7.2.1.4.1.5 0l.7-.6c.2-.2.4-.2.6-.1l1.6.7c.2.1.4.3.4.5v.5c0 .3-.1.5-.4.7-.4.3-1 .4-1.5.3-1.1-.2-2.4-.9-3.5-2-1.1-1.1-1.8-2.4-2-3.5-.1-.5 0-1.1.3-1.5Z"></path>
+  </svg>
+</a>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* =========================================================
+   LORA stitches — Single File Website
+   HTML + CSS + JavaScript
+========================================================= */
+
+(function(){
+
+"use strict";
+
+/* ---------- TRANSLATIONS ---------- */
+
+const translations = {
+
+ar:{
+  splashTag:"HANDMADE • CROCHET • LUXURY",
+  navHome:"الرئيسية",
+  navAbout:"من نحن",
+  navProducts:"المنتجات",
+  navGallery:"المعرض",
+  navFaq:"الأسئلة",
+  navContact:"تواصلي معنا",
+
+  heroBadge:"مصنوعة بحب • مصممة لتختلفي",
+  heroTitle:"حقيبتكِ... لمسة تشبهكِ",
+  heroText:"حقائب كروشي عصرية مصنوعة يدوياً بعناية، تجمع بين الأناقة والتميّز والتفاصيل التي تجعل كل قطعة مختلفة عن غيرها.",
+  heroCTA:"اكتشفي المجموعة",
+  whatsapp:"تواصلي عبر واتساب",
+  scroll:"اكتشفي التفاصيل",
+  noteOne:"صناعة يدوية",
+  noteTwo:"تفاصيل بحب",
+
+  eyebrowStory:"لماذا LORA؟",
+  problemTitle:"لأنكِ لا تبحثين عن حقيبة عادية",
+  problemDesc:"نعرف أن القطعة التي تحملينها جزء من أسلوبك، لذلك نصنعها لتكون أكثر من مجرد حقيبة.",
+  problemOneTitle:"تشابه القطع",
+  problemOneText:"عندما تبدو كل الحقائب متشابهة، يصبح العثور على قطعة تعبّر عن ذوقك أمراً صعباً.",
+  solutionOneTitle:"قطعة لها شخصيتها",
+  solutionOneText:"في LORA stitches نركز على التصميم واللون والتفاصيل اليدوية حتى تحصلي على حقيبة لها حضورها الخاص.",
+  problemTwoTitle:"اختيارات بلا روح",
+  problemTwoText:"أحياناً تكون الحقيبة جميلة، لكنها لا تشبه أسلوبك ولا تضيف شيئاً لإطلالتك.",
+  solutionTwoTitle:"تفاصيل تصنع الفرق",
+  solutionTwoText:"نختار الخامة والتدرجات والتشطيبات بعناية لنمنحك قطعة بسيطة، أنيقة، ومليئة بالشخصية.",
+
+  aboutEyebrow:"قصتنا",
+  aboutTitle:"من خيط بسيط... إلى قطعة تلفت الانتباه.",
+  aboutText1:"LORA stitches هي علامة تهتم بصناعة حقائب الكروشي العصرية يدوياً، حيث نؤمن أن الجمال الحقيقي يوجد في التفاصيل الصغيرة.",
+  aboutText2:"كل حقيبة تُصنع بعناية وهدوء، من اختيار الخامة إلى آخر غرزة، لتجمع بين الطابع اليدوي الدافئ والمظهر العصري الأنيق.",
+  aboutText3:"هدفنا بسيط: أن تجدي قطعة مختلفة، أنثوية، وعملية في الوقت نفسه، تشعرين أنها صُممت لكِ.",
+
+  servicesEyebrow:"ماذا نقدم؟",
+  servicesTitle:"خدمة تبدأ من الفكرة وتنتهي بقطعة تحبينها",
+  servicesDesc:"نهتم بالتفاصيل التي تجعل تجربة طلب الحقيبة بسيطة ومريحة.",
+  service1Title:"حقائب مصنوعة يدوياً",
+  service1Text:"تصاميم كروشي عصرية تُنفذ بعناية واهتمام بالتشطيب.",
+  service2Title:"اختيارات تناسب ذوقك",
+  service2Text:"ألوان وتصاميم مختلفة لتختاري القطعة الأقرب لشخصيتك.",
+  service3Title:"تغليف أنيق",
+  service3Text:"نحرص أن تصل طلبيتك بشكل مرتب يليق بقطعة صنعت خصيصاً لك.",
+
+  productsEyebrow:"المجموعة",
+  productsTitle:"اختاري القطعة التي تشبهكِ",
+  productsDesc:"مجموعة مختارة من أفكار حقائب LORA stitches، مع إمكانية الاستفسار عن المتوفر حالياً.",
+  product1Title:"حقيبة LORA Signature",
+  product1Text:"تصميم أنثوي ناعم يناسب الإطلالات اليومية والمناسبات الخفيفة.",
+  product2Title:"حقيبة Bow",
+  product2Text:"لمسة مرحة ومميزة، مناسبة لمن تحب القطع الملفتة دون مبالغة.",
+  product3Title:"حقيبة Summer",
+  product3Text:"خفيفة وعملية بطابع صيفي، مثالية للخروجات والسفر والعطلات.",
+  askAvailability:"اسألي عن التوفر",
+  seeFacebook:"شاهدي الصفحة كاملة",
+
+  featuresEyebrow:"لماذا نحن؟",
+  featuresTitle:"تفاصيل صغيرة، فرق كبير",
+  featuresDesc:"لأن الحقيبة المصنوعة يدوياً تستحق اهتماماً يليق بها.",
+  feature1Title:"صناعة يدوية",
+  feature1Text:"كل قطعة تمر عبر خطوات يدوية دقيقة، وليست منتجاً صناعياً مكرراً.",
+  feature2Title:"تصاميم مميزة",
+  feature2Text:"نركز على اللمسات التي تمنح كل تصميم شخصية خاصة.",
+  feature3Title:"اهتمام بالتشطيب",
+  feature3Text:"نهتم بنظافة الغرز وترتيب التفاصيل النهائية قبل التسليم.",
+  feature4Title:"تغليف مرتب",
+  feature4Text:"نضيف لمسات بسيطة تجعل تجربة استلام طلبك أجمل.",
+
+  processEyebrow:"بكل بساطة",
+  processTitle:"كيف نعمل؟",
+  processDesc:"أربع خطوات بسيطة من اختيارك إلى استلام قطعتك.",
+  step1Title:"اختاري",
